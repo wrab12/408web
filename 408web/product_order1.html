@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>产品订购</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logo2.png" />
+
+    <style>
+      body{
+        background: #f6f5f7;
+      }
+      form {
+        margin-top: 100px;
+      }
+      table {
+        background-color: white;
+      }
+    </style>
+
+    <script
+      language="javascript"
+      src="./js/province.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </head>
+
+  <body onload="getProvince()">
+    <form form name="biaodan" id="biaodan" method="POST">
+      <table
+        border="1"
+        width="60%"
+        cellspacing="4"
+        cellpadding="5"
+        align="center"
+        valign="middle"
+      >
+        <tr align="center">
+          <th colspan="4">产品订购</th>
+        </tr>
+
+        <tr>
+          <td align="center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+          <td>
+            <input type="text" name="username" />
+          </td>
+          <td align="center">联系电话</td>
+          <td>
+            <input type="text" name="tel" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center">产品名称</td>
+          <td colspan="3">
+            <input type="text" name="product_name" size="50" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center">付款方式</td>
+          <td colspan="3">
+            <input type="radio" name="payment" value="wechat" />微信
+            <input type="radio" name="payment" value="alipay" />支付宝
+            <input
+              type="radio"
+              name="payment"
+              value="cash_on_delivery"
+            />货到付款
+          </td>
+        </tr>
+        <tr>
+          <td align="center">关注产品</td>
+          <td colspan="3">
+            <input type="checkbox" value="furniture" />家具
+            <input type="checkbox" value="appliances" />家电
+            <input type="checkbox" value="clothing" />服装
+            <input type="checkbox" value="cosmetics" />化妆品
+          </td>
+        </tr>
+        <tr>
+          <td align="center">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</td>
+          <td colspan="3">
+            <select id="province" onchange="chooseProvince(this)">
+              <option value="1" selected>广东</option>
+            </select>
+            <select id="city" onchange="chooseCity(this)">
+              <option value="2" selected>广州</option>
+            </select>
+            <input type="text" id="address" size="30" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</td>
+          <td colspan="3">
+            <textarea name="remark" cols="70" rows="10"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="4">
+            <input type="submit" value="提交" />
+            &nbsp;
+            <input type="reset" value="重置" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
